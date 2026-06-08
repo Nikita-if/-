@@ -1,5 +1,5 @@
+import {HomePage} from "@/src/components/home-page";
+
 export default function App () {
-    return <h1 className="text-5xl font-bold">
-        Здесь будет баня
-    </h1>
+    return <HomePage/>;
 }

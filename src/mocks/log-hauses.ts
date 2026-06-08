@@ -1,7 +1,6 @@
+import { CatalogItem } from "@/src/types";
 
-import {Catalog} from "@/src/types/bath-tupes";
-
-export const logHouses: Catalog[] = [
+export const logHouses: CatalogItem[] = [
     {
         id: 1,
         name: "Сруб Банный",

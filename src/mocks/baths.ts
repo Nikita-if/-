@@ -1,6 +1,6 @@
-import {Catalog} from "@/src/types/bath-tupes";
+import { CatalogItem } from "@/src/types";
 
-export const baths: Catalog[] = [
+export const baths: CatalogItem[] = [
     {
         id: 4,
         name: "Баня Таёжная",

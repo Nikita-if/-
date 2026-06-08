@@ -1,6 +1,6 @@
-import {Catalog} from "@/src/types/bath-tupes";
+import { CatalogItem } from "@/src/types";
 
-export const dogHouses: Catalog[] = [
+export const dogHouses: CatalogItem[] = [
     {
         id: 1,
         name: "Будка Утеплённая",

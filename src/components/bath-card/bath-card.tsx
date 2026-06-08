@@ -1,7 +1,7 @@
-import {Catalog} from "@/src/types/bath-tupes";
+import { CatalogItem } from "@/src/types";
 
 interface BathCardProps {
-    bath: Catalog;
+    bath: CatalogItem;
 }
 
 export const BathCard = ({

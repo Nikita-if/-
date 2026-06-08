@@ -1,10 +1,10 @@
 import {useState} from "react";
-import {Catalog} from "@/src/types/bath-tupes";
+import { CatalogItem } from "@/src/types";
 import {BathCard} from "@/src/components/bath-card/bath-card";
 
 interface CatalogListProps {
     title:string;
-    items:Catalog[];
+    items: CatalogItem[];
 }
 
 export const CatalogList = ({

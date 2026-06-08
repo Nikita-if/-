@@ -2,36 +2,79 @@ import Link from "next/link";
 
 export default function CatalogPage() {
     return (
-        <div className="p-8">
-            <h1 className="text-4xl font-bold mb-8">Каталог</h1>
+        <section
+            className="relative min-h-screen bg-cover bg-center bg-no-repeat p-8"
+            style={{backgroundImage: "url('/images/catalog.jpg')"}}
+        >
+            <div className="absolute inset-0 bg-black/40"/>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link
-                    href="/catalog/baths"
-                    className="block border rounded-xl p-6 hover:shadow-lg transition-shadow"
-                >
-                    <h2 className="text-2xl font-bold mb-2">Бани</h2>
-                    <p className="text-sm text-gray-600">Все виды бань и саун</p>
-                </Link>
+            <div className="relative z-10">
+                <h1 className="text-4xl font-bold mb-8 text-white">Каталог</h1>
 
-                <Link
-                    href="/catalog/dog-houses"
-                    className="block border rounded-xl p-6 hover:shadow-lg transition-shadow"
-                >
-                    <h2 className="text-2xl font-bold mb-2">Будки</h2>
-                    <p className="text-sm text-gray-600">Все виды собачьих будок</p>
-                </Link>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <Link
-                    href="/catalog/log-hauses"
-                    className="block border rounded-xl p-6 hover:shadow-lg transition-shadow"
-                >
-                    <h2 className="text-2xl font-bold mb-2">Срубы</h2>
-                    <p className="text-sm text-gray-600">Все виды срубов будок</p>
-                </Link>
+                    {/* Бани */}
+                    <Link
+                        href="/catalog/baths"
+                        className="group block aspect-square rounded-2xl overflow-hidden relative"
+                    >
+                        {/* Фото */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style={{backgroundImage: "url('/images/bath1.jpg')"}}
+                        />
+                        {/* Затемнение */}
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"/>
+                        {/* Текст */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <h2 className="text-3xl font-bold text-white">Бани</h2>
+                        </div>
+                    </Link>
 
+                    <Link
+                        href="/catalog/dog-houses"
+                        className="group block aspect-square rounded-2xl overflow-hidden relative"
+                    >
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style={{backgroundImage: "url('/images/dog-house.jpg')"}}
+                        />
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"/>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <h2 className="text-3xl font-bold text-white">Будки</h2>
+                        </div>
+                    </Link>
 
+                    <Link
+                        href="/catalog/log-houses"
+                        className="group block aspect-square rounded-2xl overflow-hidden relative"
+                    >
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style={{backgroundImage: "url('/images/log-house.jpg')"}}
+                        />
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"/>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <h2 className="text-3xl font-bold text-white">Срубы</h2>
+
+                        </div>
+
+                    </Link>
+                    <Link
+                        href="/catalog/gazebos"
+                        className="group block aspect-square rounded-2xl overflow-hidden relative  items-center "                    >
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style={{backgroundImage: "url('/images/gazebo.jpg')"}}
+                        />
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"/>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <h2 className="text-3xl font-bold text-white">Беседки</h2>
+                        </div>
+                    </Link>
+
+                </div>
             </div>
-        </div>
+        </section>
     );
 }
