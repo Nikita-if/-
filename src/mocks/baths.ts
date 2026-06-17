@@ -5,7 +5,7 @@ export const baths: CatalogItem[] = [
         id: 4,
         name: "Баня Таёжная",
         price: 720000,
-        image: "/images/bath-4.jpg",
+        image: "/images/Баня-Таёжная.jpg",
         description:
             "Тёплая баня из северной сосны с просторной парной.",
     },

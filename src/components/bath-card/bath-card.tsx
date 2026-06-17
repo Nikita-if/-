@@ -9,7 +9,13 @@ export const BathCard = ({
                          }: BathCardProps) => {
     return (
         <div className="border rounded-xl p-6 shadow-md">
-            <h2 className="text-2xl font-bold">
+            <img
+                src={bath.image}
+                alt={bath.name}
+                className="w-full h-64 object-cover rounded-lg object-fit: contain"
+            />
+
+            <h2 className="text-2xl font-bold mt-4">
                 {bath.name}
             </h2>
 
@@ -20,10 +26,6 @@ export const BathCard = ({
             <p className="mt-4 text-gray-600">
                 {bath.description}
             </p>
-
-            <button className="mt-4 border rounded px-4 py-2">
-                Подробнее
-            </button>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import {useState} from "react";
 import { CatalogItem } from "@/src/types";
 import {BathCard} from "@/src/components/bath-card/bath-card";
+import Link from "next/link";
 
 interface CatalogListProps {
     title:string;
@@ -49,10 +50,11 @@ export const CatalogList = ({
 
             <div className="grid grid-cols-3 gap-6">
                 {sortedBaths.map((items) => (
+                    <Link href={`/catalog/${items.id}`} key={items.id}>
                     <BathCard
-                        key={items.id}
                         bath={items}
                     />
+        </Link>
                 ))}
             </div>
         </div>

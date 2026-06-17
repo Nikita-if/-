@@ -17,8 +17,8 @@ const VkIcon = () => (
 export const Header = () => {
     const menuItems = [
         { name: "Главная", href: "/" },
-        { name: "Контакты", href: "/contacts" },
         { name: "Каталог", href: "/catalog" },
+        { name: "Контакты", href: "/contacts" },
     ];
 
     return (
@@ -53,7 +53,7 @@ export const Header = () => {
                                 <Send size={18} />
                             </a>
                             <a
-                                href="https://vk.com"
+                                href="https://vk.com/timkiller01"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-white hover:text-amber-400 transition-colors flex items-center justify-center w-5 h-5"
