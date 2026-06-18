@@ -12,8 +12,8 @@ interface Props {
 }
 
 export const CatalogModalContent = ({ title, items }: Props) => {
-    const [search, setSearch] = useState("");
-    const [sort, setSort] = useState("");
+    const [search] = useState("");
+    const [sort] = useState("");
 
     const [emblaRef] = useEmblaCarousel({
         loop: true,
@@ -43,57 +43,55 @@ export const CatalogModalContent = ({ title, items }: Props) => {
     // const scrollNext = () => emblaApi?.scrollNext();
 
     return (
-        <div className="bg-white rounded-2xl p-6 w-full">
-
+        <div className="bg-white rounded-2xl p-6 w-full max-h-[90vh] flex flex-col">
             <h1 className="text-3xl font-bold mb-6">{title}</h1>
 
-            <input
-                className="border rounded-xl p-3 w-full mb-4"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Поиск..."
-            />
+            {/*<input*/}
+            {/*    className="border rounded-xl p-3 w-full mb-4"*/}
+            {/*    value={search}*/}
+            {/*    onChange={(e) => setSearch(e.target.value)}*/}
+            {/*    placeholder="Поиск..."*/}
+            {/*/>*/}
 
-            <select
-                className="border rounded-xl p-3 w-full mb-6"
-                value={sort}
-                onChange={(e) => setSort(e.target.value)}
-            >
-                <option value="">Без сортировки</option>
-                <option value="cheap">Сначала дешевые</option>
-                <option value="expensive">Сначала дорогие</option>
-            </select>
+            {/*<select*/}
+            {/*    className="border rounded-xl p-3 w-full mb-6"*/}
+            {/*    value={sort}*/}
+            {/*    onChange={(e) => setSort(e.target.value)}*/}
+            {/*>*/}
+            {/*    <option value="">Без сортировки</option>*/}
+            {/*    <option value="cheap">Сначала дешевые</option>*/}
+            {/*    <option value="expensive">Сначала дорогие</option>*/}
+            {/*</select>*/}
 
-            <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex">
-
+            <div className="overflow-hidden flex-1" ref={emblaRef}>
+                <div className="flex h-full">
                     {sorted.map((item) => (
-                        <div key={item.id} className="min-w-full px-2">
+                        <div
+                            key={item.id}
+                            className="min-w-[33.33%] px-2"
+                        >
                             <Link href={`/catalog/${item.id}`}>
                                 <BathCard bath={item} />
                             </Link>
                         </div>
                     ))}
-
                 </div>
             </div>
 
-            {/*<div className="flex justify-between mt-4">*/}
+            {/*<div className="flex justify-center gap-4 mt-4">*/}
             {/*    <button*/}
             {/*        onClick={scrollPrev}*/}
-            {/*        className="px-4 py-2 bg-black text-white rounded-lg"*/}
+            {/*        className="px-6 py-2 bg-black/80 text-white rounded-full hover:bg-black transition"*/}
             {/*    >*/}
-            {/*        ◀*/}
+            {/*        ◀ Назад*/}
             {/*    </button>*/}
-
             {/*    <button*/}
             {/*        onClick={scrollNext}*/}
-            {/*        className="px-4 py-2 bg-black text-white rounded-lg"*/}
+            {/*        className="px-6 py-2 bg-black/80 text-white rounded-full hover:bg-black transition"*/}
             {/*    >*/}
-            {/*        ▶*/}
+            {/*        Вперёд ▶*/}
             {/*    </button>*/}
             {/*</div>*/}
-
         </div>
     );
 };

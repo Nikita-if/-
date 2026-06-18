@@ -5,7 +5,7 @@ export const logHouses: CatalogItem[] = [
         id: 1,
         name: "Сруб Банный",
         price: 350000,
-        image: "/images/log-house-1.jpg",
+        image: "/images/Сруб Банный.jpg",
         description: "Компактный сруб для бани 3х4 метра.",
     },
     {
@@ -43,32 +43,4 @@ export const logHouses: CatalogItem[] = [
         image: "/images/log-house-6.jpg",
         description: "Охотничий домик с печкой 4х4 метра.",
     },
-    {
-        id: 7,
-        name: "Сруб С верандой",
-        price: 720000,
-        image: "/images/log-house-7.jpg",
-        description: "Сруб с большой верандой 5х6 метров.",
-    },
-    {
-        id: 8,
-        name: "Сруб Двухэтажный",
-        price: 1250000,
-        image: "/images/log-house-8.jpg",
-        description: "Двухэтажный сруб 8х8 метров для постоянного проживания.",
-    },
-    {
-        id: 9,
-        name: "Сруб С гаражом",
-        price: 1450000,
-        image: "/images/log-house-9.jpg",
-        description: "Сруб с пристроенным гаражом 10х8 метров.",
-    },
-    {
-        id: 10,
-        name: "Сруб Премиум",
-        price: 1850000,
-        image: "/images/log-house-10.jpg",
-        description: "Элитный сруб 10х10 метров с бассейном и сауной.",
-    },
-];
+    ]

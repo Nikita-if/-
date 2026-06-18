@@ -1,5 +1,5 @@
-import {baths} from "@/src/mocks/baths";
 import {notFound} from "next/navigation";
+import {logHouses} from "@/src/mocks/log-hauses";
 
 interface Props {
     params: Promise<{
@@ -7,10 +7,10 @@ interface Props {
     }>;
 }
 
-export default async function BathPage({params}: Props) {
+export default async function LogHouses({params}: Props) {
     const {id} = await params;
-    const bath = baths.find((item) => item.id === Number(id));
-    if (!bath) {
+    const house = logHouses.find((item) => item.id === Number(id));
+    if (!house) {
         notFound();
     }
     return (
@@ -19,8 +19,8 @@ export default async function BathPage({params}: Props) {
 
                 <div className="overflow-hidden rounded-[32px] shadow-2xl">
                     <img
-                        src={bath.image}
-                        alt={bath.name}
+                        src={house.image}
+                        alt={house.name}
                         className="w-full h-[600px] object-cover"
                     />
                 </div>
@@ -36,11 +36,11 @@ export default async function BathPage({params}: Props) {
                                 </p>
 
                                 <h1 className="text-5xl font-bold mt-2">
-                                    {bath.name}
+                                    {house.name}
                                 </h1>
 
                                 <p className="text-gray-600 text-lg mt-6 leading-8">
-                                    {bath.description}
+                                    {house.description}
                                 </p>
                             </div>
 
@@ -50,7 +50,7 @@ export default async function BathPage({params}: Props) {
                                 </p>
 
                                 <p className="text-5xl font-bold text-amber-600">
-                                    {bath.price.toLocaleString()} ₽
+                                    {house.price.toLocaleString()} ₽
                                 </p>
 
                                 <button

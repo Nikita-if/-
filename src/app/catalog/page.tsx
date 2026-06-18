@@ -25,7 +25,7 @@ export default function CatalogPage() {
 
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen flex flex-col">
             <div className="bg-black/90 py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <h1 className="text-white text-5xl md:text-6xl font-bold mb-4">
@@ -37,26 +37,26 @@ export default function CatalogPage() {
                 </div>
             </div>
 
-            <div className="relative -mt-16 mb-16 ">
+            <div className="relative -mt-16 mb-16">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8 lg:gap-10">
                         <div
                             onClick={() => openModal("baths")}
-                            className="flex-1 h-64 bg-cover bg-center rounded-2xl cursor-pointer hover:scale-105 transition relative overflow-hidden shadow-xl"
+                            className="w-full md:w-[48%] h-52 sm:h-64 md:h-80 lg:h-96 xl:h-[450px] bg-cover bg-center rounded-2xl cursor-pointer hover:scale-105 transition relative overflow-hidden shadow-xl"
                             style={{backgroundImage: "url('/images/bath1.jpg')"}}
                         >
                             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                                <h2 className="text-4xl font-bold text-white">Бани</h2>
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Бани</h2>
                             </div>
                         </div>
 
                         <div
                             onClick={() => openModal("sruby")}
-                            className="flex-1 h-64 bg-cover bg-center rounded-2xl cursor-pointer hover:scale-105 transition relative overflow-hidden shadow-xl"
+                            className="w-full md:w-[48%] h-52 sm:h-64 md:h-80 lg:h-96 xl:h-[450px] bg-cover bg-center rounded-2xl cursor-pointer hover:scale-105 transition relative overflow-hidden shadow-xl"
                             style={{backgroundImage: "url('/images/сруб-главная.jpg')"}}
                         >
                             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                                <h2 className="text-4xl font-bold text-white">Срубы</h2>
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Срубы</h2>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ export default function CatalogPage() {
                 items={currentCategory === "baths" ? baths : logHouses}/> </Modal>
 
 
-            <footer className="bg-black/80 py-12">
+            <footer className="bg-black/80 py-12 mt-auto">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
 
