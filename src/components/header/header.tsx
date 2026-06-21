@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Send } from "lucide-react";
+import {MobileMenu} from "@/src/components/header/modle-menu/modle-menu";
 
 const WhatsAppIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
@@ -72,6 +73,7 @@ export const Header = () => {
                             </a>
                         </div>
                     </div>
+                    <MobileMenu />
                 </div>
             </div>
         </header>

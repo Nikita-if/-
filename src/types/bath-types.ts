@@ -4,4 +4,5 @@ export interface CatalogItem {
     price: number;
     image: string ;
     description: string;
+    category: "baths" | "log-houses" | "dog-houses";
 }

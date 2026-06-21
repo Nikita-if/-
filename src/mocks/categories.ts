@@ -16,8 +16,8 @@ export const categories: Category[] = [
     {
         id: 3,
         title: "Срубы",
-        image: "/images/categories/log-houses.jpg",
-        href: "/catalog/log-houses",
+        image: "/images/categories/log-houses1.jpg",
+        href: "/catalog/log-s",
     },
     {
         id: 4,

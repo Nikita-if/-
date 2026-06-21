@@ -17,6 +17,15 @@ export const CatalogModalContent = ({ title, items }: Props) => {
 
     const [emblaRef] = useEmblaCarousel({
         loop: true,
+        slidesToScroll: 1,
+        breakpoints: {
+            '(min-width: 640px)': {
+                slidesToScroll: 2,
+            },
+            '(min-width: 1024px)': {
+                slidesToScroll: 3,
+            },
+        },
     });
 
     const filtered = useMemo(() => {
@@ -39,59 +48,24 @@ export const CatalogModalContent = ({ title, items }: Props) => {
         return data;
     }, [filtered, sort]);
 
-    // const scrollPrev = () => emblaApi?.scrollPrev();
-    // const scrollNext = () => emblaApi?.scrollNext();
-
     return (
-        <div className="bg-white rounded-2xl p-6 w-full max-h-[90vh] flex flex-col">
-            <h1 className="text-3xl font-bold mb-6">{title}</h1>
-
-            {/*<input*/}
-            {/*    className="border rounded-xl p-3 w-full mb-4"*/}
-            {/*    value={search}*/}
-            {/*    onChange={(e) => setSearch(e.target.value)}*/}
-            {/*    placeholder="Поиск..."*/}
-            {/*/>*/}
-
-            {/*<select*/}
-            {/*    className="border rounded-xl p-3 w-full mb-6"*/}
-            {/*    value={sort}*/}
-            {/*    onChange={(e) => setSort(e.target.value)}*/}
-            {/*>*/}
-            {/*    <option value="">Без сортировки</option>*/}
-            {/*    <option value="cheap">Сначала дешевые</option>*/}
-            {/*    <option value="expensive">Сначала дорогие</option>*/}
-            {/*</select>*/}
+        <div className="bg-white rounded-2xl p-4 sm:p-6 w-full max-h-[90vh] flex flex-col">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{title}</h1>
 
             <div className="overflow-hidden flex-1" ref={emblaRef}>
                 <div className="flex h-full">
                     {sorted.map((item) => (
                         <div
                             key={item.id}
-                            className="min-w-[33.33%] px-2"
+                            className="min-w-[100%] sm:min-w-[50%] lg:min-w-[33.33%] px-1 sm:px-2"
                         >
-                            <Link href={`/catalog/${item.id}`}>
+                            <Link href={`/catalog/${item.category}/${item.id}`}>
                                 <BathCard bath={item} />
                             </Link>
                         </div>
                     ))}
                 </div>
             </div>
-
-            {/*<div className="flex justify-center gap-4 mt-4">*/}
-            {/*    <button*/}
-            {/*        onClick={scrollPrev}*/}
-            {/*        className="px-6 py-2 bg-black/80 text-white rounded-full hover:bg-black transition"*/}
-            {/*    >*/}
-            {/*        ◀ Назад*/}
-            {/*    </button>*/}
-            {/*    <button*/}
-            {/*        onClick={scrollNext}*/}
-            {/*        className="px-6 py-2 bg-black/80 text-white rounded-full hover:bg-black transition"*/}
-            {/*    >*/}
-            {/*        Вперёд ▶*/}
-            {/*    </button>*/}
-            {/*</div>*/}
         </div>
     );
 };
